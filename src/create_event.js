@@ -1,11 +1,9 @@
-import React from 'react';
-import TextField from '@material-ui/core/TextField';
-import { red } from '@material-ui/core/colors';
-import FormGroup from '@material-ui/core/FormGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Switch from '@material-ui/core/Switch';
 import Button from '@material-ui/core/Button';
-import PropTypes from 'prop-types';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormGroup from '@material-ui/core/FormGroup';
+import Switch from '@material-ui/core/Switch';
+import TextField from '@material-ui/core/TextField';
+import React from 'react';
 
 class LocationSwitch extends React.Component {
   state = {

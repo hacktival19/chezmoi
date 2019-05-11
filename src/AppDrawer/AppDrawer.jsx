@@ -1,46 +1,19 @@
-import React from 'react';
+import Divider from '@material-ui/core/Divider';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import { makeStyles } from '@material-ui/styles';
-import Divider from '@material-ui/core/Divider';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import SignOutIcon from '@material-ui/icons/ExitToApp';
+import HistoryIcon from '@material-ui/icons/History';
 import DiningIcon from '@material-ui/icons/LocalDining';
 import SettingsIcon from '@material-ui/icons/Settings';
-import HistoryIcon from '@material-ui/icons/History';
-import ListItemText from '@material-ui/core/ListItemText';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import SignOutIcon from '@material-ui/icons/ExitToApp';
-import { LoginPage } from '../LoginPage/LoginPage';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { makeStyles } from '@material-ui/styles';
+import React from 'react';
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
   toolbar: theme.mixins.toolbar,
 }));
-
-
-// Routing
-function AppRouter() {
-  return (
-    <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/dining">Dining</Link>
-            </li>
-            <li>
-              <Link to="//">History</Link>
-            </li>
-            <li>
-              <Link to="/users/">Settings</Link>
-            </li>
-          </ul>
-        </nav>
-
-      </div>
-    </Router>
-  );
-}
-
 
 function pickIcons(context) {
   switch (context) {

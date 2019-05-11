@@ -1,22 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import {HistoryView} from './HistoryView';
-import CreateEvent from './create_event';
-import * as serviceWorker from './serviceWorker';
-import { WebsocketStore } from './services/websocketStore';
-import {User} from './models/user';
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import './index.css';
+import { WebsocketStore } from './services/websocketStore';
+import * as serviceWorker from './serviceWorker';
 
 const theme = createMuiTheme({ typography: { useNextVariants: true } });
-const websocketStore = new WebsocketStore();
 
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
-    <HistoryView />
+    <App />
   </ThemeProvider>,
   document.getElementById('root'));
 

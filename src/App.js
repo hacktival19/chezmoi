@@ -1,17 +1,16 @@
-import React from 'react';
-import './App.css';
-import { TopNavBar } from './TopNavBar';
-import { AppDrawer } from './AppDrawer'
-import Hidden from '@material-ui/core/Hidden';
-import Drawer from '@material-ui/core/Drawer';
-import { makeStyles, useTheme } from '@material-ui/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import { FoodEventCarousel } from './FoodEventCarousel';
-import { LoginPage } from './LoginPage/LoginPage';
+import Drawer from '@material-ui/core/Drawer';
+import Hidden from '@material-ui/core/Hidden';
+import { makeStyles, useTheme } from '@material-ui/styles';
+import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { RegisterUserPage } from './RegisterUserPage/RegisterUserPage';
-import { Preview } from './Preview';
+import './App.css';
+import { AppDrawer } from './AppDrawer';
 import CreateEvent from './create_event';
+import { LoginPage } from './LoginPage/LoginPage';
+import { Preview } from './Preview';
+import { RegisterUserPage } from './RegisterUserPage/RegisterUserPage';
+import { TopNavBar } from './TopNavBar';
 
 const drawerWidth = 240;
 const useStyles = makeStyles(theme => ({
