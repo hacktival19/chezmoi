@@ -8,7 +8,7 @@ import { makeStyles, useTheme } from '@material-ui/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { FoodEventCarousel } from './FoodEventCarousel';
 import { LoginPage } from './LoginPage/LoginPage';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import { RegisterUserPage } from './RegisterUserPage/RegisterUserPage';
 import { Preview } from './Preview';
 import CreateEvent from './create_event';
@@ -35,7 +35,10 @@ const useStyles = makeStyles(theme => ({
     width: drawerWidth,
   },
   content: {
-    flexGrow: 1
+    flexGrow: 1,
+    position: 'absolute',
+    top: '56px',
+    height: '100%',
   },
 }));
 

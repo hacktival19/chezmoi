@@ -50,15 +50,16 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export const Preview = ({price, tags, title}) => {
+export const Preview = ({price, tags, title, height}) => {
   const classes = useStyles();
   return (
     <SwipeableViews
-      containerStyle={{height: 986}}
-      slideClassName={classes.slide}
+      containerStyle={{height}}
       axis="y"
       resistance
       enableMouseEvents
+      containerStyle={{height}}
+      slideStyle={{height}}
     >
       <div className={classes.root}>
         <div className={classes.title}>

@@ -2,6 +2,7 @@ import { virtualize, bindKeyboard } from 'react-swipeable-views-utils';
 import SwipeableViews from 'react-swipeable-views';
 import React, {useState} from 'react';
 import {Preview} from '../Preview';
+import ContainerDimensions from 'react-container-dimensions';
 
 
 const VirtualizeSwipeableViews = bindKeyboard(virtualize(SwipeableViews));
@@ -10,17 +11,21 @@ const VirtualizeSwipeableViews = bindKeyboard(virtualize(SwipeableViews));
 export const FoodEventCarousel = ({foodEvents}) => {
   const [index, setIndex] = useState(0);
   return (
-    <div>
-      <VirtualizeSwipeableViews
-        slideCount={foodEvents.length}
-        index={index}
-        onChangeIndex={(index)=>{setIndex(index)}}
-        slideRenderer={({index, key})=> {
-          return <Preview key={key} {...foodEvents[index]}/>;
-        }}
-        enableMouseEvents
-      />
-    </div>
+    <ContainerDimensions>
+      {({height})=>(
+        <VirtualizeSwipeableViews
+          containerStyle={{height}}
+          slideCount={foodEvents.length}
+          index={index}
+          onChangeIndex={(index)=>{setIndex(index)}}
+          slideRenderer={({index, key})=> {
+            return <Preview height={height} key={key} {...foodEvents[index]}/>;
+          }}
+          enableMouseEvents
+          height={height}
+        />
+      )}
+    </ContainerDimensions>
   );
 }
 
