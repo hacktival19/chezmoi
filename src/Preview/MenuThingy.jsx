@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/styles';
-import MoneyIcon from '@material-ui/icons/AttachMoney';
-import MoneyOffIcon from '@material-ui/icons/MoneyOff';
+import {PriceIndicator} from '../PriceIndicator';
 import {foodTags } from './constants';
 
 
@@ -21,10 +20,6 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export const MenuThingy = ({price, tags}) => {
-  const priceContent = [];
-  for (let i = 0; i < price; i++) {
-    priceContent.push(<MoneyIcon key={i}/>);
-  }
   const classes = useStyles();
   return (
     <div className={classes.menu}>
@@ -32,7 +27,7 @@ export const MenuThingy = ({price, tags}) => {
         {tags.map((tag)=> (foodTags[tag]({key: tag})))}
       </div>
       <div>
-      {priceContent.length ? priceContent : <MoneyOffIcon/>}
+        <PriceIndicator/>
       </div>
     </div>
   );

@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import {HistoryView} from './HistoryView';
 import CreateEvent from './create_event';
 import * as serviceWorker from './serviceWorker';
 import { WebsocketStore } from './services/websocketStore';
@@ -15,7 +16,7 @@ const websocketStore = new WebsocketStore();
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
-    <App />
+    <HistoryView />
   </ThemeProvider>,
   document.getElementById('root'));
 
