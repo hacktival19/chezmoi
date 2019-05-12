@@ -52,7 +52,6 @@ export const Table = ({ img }) => {
         <div className={classes.table}>
           <img className={classes.rim} src={rim} alt="" />
           <img className={classes.inner} src={inner} alt="" />
-          <img className={classes.cloth} src={cloth} alt="" />
           <img className={classes.food} src={food} alt="" />
         </div>
       </div>

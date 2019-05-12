@@ -17,7 +17,6 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'center'
   },
   title: {
-    background: theme.palette.background.paper,
     flexGrow: '0',
     display: 'flex',
     justifyContent: 'center',

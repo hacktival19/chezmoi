@@ -1,6 +1,7 @@
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardHeader from '@material-ui/core/CardHeader';
+import Chip from '@material-ui/core/Chip';
 import CardMedia from '@material-ui/core/CardMedia';
 import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
@@ -8,6 +9,8 @@ import { makeStyles } from '@material-ui/styles';
 import React from 'react';
 import {PriceIndicator} from '../PriceIndicator';
 import pizza from '../static/media/Pizza.png';
+import {foodTags } from '../Preview/constants';
+
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -31,11 +34,14 @@ const useStyles = makeStyles(theme => ({
   expandOpen: {
     transform: 'rotate(180deg)',
   },
+  chip: {
+    margin: theme.spacing.unit / 2
+  }
 }));
 
 export const FoodEventCard = ({event, children}) => {
   const classes = useStyles();
-
+  const tags = event.tags || [];
   return (
     <Card className={classes.card}>
       <CardHeader
@@ -58,6 +64,20 @@ export const FoodEventCard = ({event, children}) => {
         <Typography component="p">
           <PriceIndicator key={'price'}  price={event.price} classes={{fontSizeSmall: classes.icons}} fontSize={'small'}/>
         </Typography>
+        {children && children.length && <Divider/>}
+        <Typography variant="h6" component="h4">
+          Tags
+        </Typography>
+        <div>
+          {tags.map((tag)=> {
+            return <Chip
+              key={tag}
+              icon={foodTags[tag]({key: tag})}
+              label={tag}
+              className={classes.chip}
+            />
+          })}
+        </div>
         {children && children.length && <Divider/>}
         {children}
       </CardContent>
