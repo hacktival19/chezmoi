@@ -89,7 +89,7 @@ const App = (props) => {
         <Route path="/register-user" component={RegisterUserPage} />
         <Route path="/create-event" component={CreateEvent} />
         <Route path="/history" component={HistoryView} />
-        <Route path="/manage" component={ManageEvent} />
+        <Route path="/manage" component={ManageView} />
       </div>
     </div>
   );

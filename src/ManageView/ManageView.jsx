@@ -33,7 +33,7 @@ export const ManageView = ({attendees, event}) => {
     <FoodEventCard event={event}>
       <List className={classes.root}>
         {attendees.map((foodEvent, index)=> {
-          return <AttendeesItem key={index} foodEvent={{...foodEvent}}/>
+          return <AttendeesItem key={index} {...foodEvent}/>
         })}
       </List>
     </FoodEventCard>
@@ -46,8 +46,8 @@ ManageView.defaultProps = {
     description: 'Some tasty pizza',
   },
   attendees: [
-    {title: 'First test', price: 2, tags: ['vegan'], userRating: 5, foodRating: 2, image: 'https://steamuserimages-a.akamaihd.net/ugc/955215867817475423/A1831655542F60F46EF4BC035D25C3632CCFDE46/'},
-    {title: 'Free  meal', price: 0, tags: ['glutenFree'], userRating: 0, foodRating: 2.2, image: 'https://steamuserimages-a.akamaihd.net/ugc/955215867817475423/A1831655542F60F46EF4BC035D25C3632CCFDE46/'},
-    {title: 'Fancy meal', price: 3, tags: ['vegan', 'glutenFree'], userRating: 2.2, foodRating: 5. , image: 'https://steamuserimages-a.akamaihd.net/ugc/955215867817475423/A1831655542F60F46EF4BC035D25C3632CCFDE46/'}
+    {title: 'Hermann', price: 2, tags: ['vegan'], userRating: 5, foodRating: 2, image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80'},
+    {title: 'Big Boss', price: 0, tags: ['glutenFree'], userRating: 0, foodRating: 2.2, image: 'https://static.tvtropes.org/pmwiki/pub/images/big_boss_1_877.jpg'},
+    {title: 'Link', price: 3, tags: ['vegan', 'glutenFree'], userRating: 2.2, foodRating: 5. , image: 'https://steamuserimages-a.akamaihd.net/ugc/955215867817475423/A1831655542F60F46EF4BC035D25C3632CCFDE46/'}
   ]
 };

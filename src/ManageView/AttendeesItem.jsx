@@ -48,8 +48,6 @@ export const AttendeesItem = (foodEvent) => {
         secondary={
           <div className={classes.inner}>
             <Rating key={'rating'} rating={foodEvent.foodRating} classes={{fontSizeSmall: classes.icons}} fontSize={'small'}/>
-            -
-            <PriceIndicator key={'price'}  price={foodEvent.price} classes={{fontSizeSmall: classes.icons}} fontSize={'small'}/>
           </div>
         }
       />
